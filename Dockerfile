@@ -7,7 +7,6 @@ RUN apk --no-cache add ${BUILD_PACKAGES} \
 	&& npm install -g npm@4 \
 	&& npm install -g node-gyp \
 	&& node-gyp install \
-	&& cd /app/programs/server && npm install \
-	&& apk del ${BUILD_PACKAGES}
+	&& cd /app/programs/server && npm install
 EXPOSE 80
 CMD ["/app/run.sh"]
